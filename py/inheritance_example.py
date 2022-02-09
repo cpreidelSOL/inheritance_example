@@ -1,13 +1,11 @@
 import sys
 
-
 class BuildingElement: 
     def __init__(self, fname):
         self.name = fname
     
     def printname(self):
         print('My name is = ' + self.name)
-    
     
 class Wall(BuildingElement): 
     

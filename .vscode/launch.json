@@ -5,6 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch inheritance",
+            "request": "launch",
+            "mainClass": "jav.inheritance",
+            "projectName": "inheritance_example_80511c43"
+        },
+        {
+            "type": "java",
+            "name": "Launch inheritance",
+            "request": "launch",
+            "mainClass": "java.inheritance",
+            "projectName": "inheritance_example_80511c43"
+        },
+        {
+            "type": "java",
+            "name": "Attach",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "<debug port of the debuggee>"
+        },
+        {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
@@ -15,7 +36,6 @@
             "stopAtEntry": false,
             "console": "internalConsole"
         },
-
         {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
