@@ -1,1 +1,1 @@
-# interhtiance_jupyter
+# inheritance_example
