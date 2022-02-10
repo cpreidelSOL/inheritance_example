@@ -1,13 +1,12 @@
 ﻿using System;
 
-abstract class BuildingElement
+class BuildingElement
 {
     public BuildingElement(string name)
     {
         Name = name; 
     }
     public string Name;
-    public abstract double GetVolume();
     public void Print()
     {
         Console.Write("My name is: " + Name + "\n");
@@ -26,7 +25,7 @@ class Wall : BuildingElement
         Thickness = thickness;
         Height = height; 
     }
-    public override double GetVolume()
+    public double GetVolume()
     {
         return Length * Thickness * Height;
     }

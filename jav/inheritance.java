@@ -41,11 +41,9 @@ class Wall extends BuildingElement{
 }
 
 public class inheritance{
-
     public static void main(String[] args) 
     {
         Wall wall = new Wall("Test_Wall", 2.0, 0.24, 2.0); 
         wall.print();
     }
-
 }
