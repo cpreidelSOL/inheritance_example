@@ -1,51 +1,48 @@
 ﻿using System;
 
-abstract class Shape
+abstract class BuildingElement
 {
-    public Shape(string name)
+    public BuildingElement(string name)
     {
         Name = name; 
     }
-
     public string Name;
-
-    public abstract double GetArea();
-
+    public abstract double GetVolume();
     public void Print()
     {
-        Console.Write("My name is: " + Name);
+        Console.Write("My name is: " + Name + "\n");
     }
-
 }
 
-class Rectangle : Shape
+class Wall : BuildingElement
 {
     public double Length;
-    public double Width;
+    public double Thickness;
+    public double Height;
     
-    public Rectangle(string name, double length, double width) : base(name)
+    public Wall(string name, double length, double thickness, double height) : base(name)
     {
         Length = length;
-        Width = width;
+        Thickness = thickness;
+        Height = height; 
     }
-    public override double GetArea()
+    public override double GetVolume()
     {
-        return Length * Width;
+        return Length * Thickness * Height;
     }
 
     public void Print()
     {
-        Console.WriteLine("My name is: " + Name);
-        Console.WriteLine("My Area is: " + GetArea());
+        base.Print();
+        Console.WriteLine("My Volume is: " + GetVolume());
     }
 }
-
 
 class Program
 {
     static void Main(string[] args)
     {
-        var rec = new Rectangle("Test_Rec", 2, 4);
-        rec.Print();
+        var wall = new Wall("Test_Wall", 2, 0.24, 2);
+        wall.Print();
     }
 }

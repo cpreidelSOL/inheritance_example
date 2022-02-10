@@ -1,40 +1,42 @@
 package jav;
 
-class Shape{
+class BuildingElement{
 
     String Name; 
 
-    public Shape(String name)
+    public BuildingElement(String name)
     {
         Name = name; 
     }
 
     void print()
     {
-        System.out.println("My name is: " + Name);  
+        System.out.println("My name is = " + Name);  
     }
 }
 
-class Rectangle extends Shape{
+class Wall extends BuildingElement{
 
     Double Length; 
-    Double Width; 
+    Double Thickness; 
+    Double Height;
 
-    public Rectangle(String name, Double length, Double width) {
+    public Wall(String name, Double length, Double thickness, Double height) {
         super(name);
         Length = length; 
-        Width = width; 
+        Thickness = thickness;
+        Height = height; 
     }
 
-    public double GetArea()
+    public double GetVolume()
     {
-        return Length * Width; 
+        return Length * Thickness * Height; 
     }
 
     void print()
     {
-        System.out.println("My name is: " + Name);  
-        System.out.println("My Area is: " + GetArea());  
+        super.print();
+        System.out.println("My volume is = " + GetVolume());  
     }
 }
 
@@ -42,11 +44,8 @@ public class inheritance{
 
     public static void main(String[] args) 
     {
-
-        Rectangle rec = new Rectangle("Test", 2.0, 4.0); 
-
-        rec.print();
-        
+        Wall wall = new Wall("Test_Wall", 2.0, 0.24, 2.0); 
+        wall.print();
     }
 
 }
